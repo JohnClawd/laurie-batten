@@ -3,118 +3,166 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laurie (Lo) Batten</title>
-  <meta name="description" content="Community builder, marketing + comms lead, and enthusiastic teller of stories (with a dash of camp)." />
+  <title>Laurie (Lo) Batten — Extremely Official Internet Page</title>
+  <meta name="description" content="Laurie (Lo) Batten — marketing + comms leader, community builder, and enthusiastic teller of stories (now in loud retro)." />
+
   <style>
+    /*
+      Intentionally campy 90s/retro aesthetic.
+      (Yes, the colors clash. That is the assignment.)
+    */
+
     :root {
-      /* campy + retro on purpose */
-      --bg1: #ff00a8;
-      --bg2: #00e5ff;
-      --bg3: #ffe600;
-      --ink: #0b0b12;
-      --paper: #fffdf2;
-      --card: rgba(255, 253, 242, 0.88);
-      --line: rgba(11, 11, 18, 0.18);
-      --muted: rgba(11, 11, 18, 0.72);
-      --shadow: 0 18px 0 rgba(11, 11, 18, 0.18);
+      --ink: #07071a;
+      --paper: #fffbe6;
+      --hotpink: #ff00a8;
+      --cyan: #00e5ff;
+      --lime: #b6ff00;
+      --yellow: #ffe600;
+      --orange: #ff7a00;
+      --purple: #7c3aed;
+      --blue: #0047ff;
+
+      --shadow: 10px 10px 0 rgba(0,0,0,0.25);
+      --border: 4px solid var(--ink);
       --radius: 18px;
-      --accent: #7c3aed;
-      --accent2: #ff006e;
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
 
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--ink);
+      font-family: "Comic Sans MS", "Comic Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
-        radial-gradient(900px 700px at 15% 10%, rgba(255, 230, 0, 0.70), transparent 55%),
-        radial-gradient(900px 700px at 85% 15%, rgba(0, 229, 255, 0.75), transparent 55%),
-        radial-gradient(900px 700px at 70% 85%, rgba(255, 0, 168, 0.70), transparent 55%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
+        linear-gradient(45deg, rgba(255,0,168,0.20), rgba(0,229,255,0.20)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 230, 0, 0.55) 0,
+          rgba(255, 230, 0, 0.55) 18px,
+          rgba(0, 229, 255, 0.45) 18px,
+          rgba(0, 229, 255, 0.45) 36px,
+          rgba(182, 255, 0, 0.45) 36px,
+          rgba(182, 255, 0, 0.45) 54px
+        );
       background-attachment: fixed;
     }
 
-    a { color: inherit; }
-    a:hover { color: var(--accent); }
+    a { color: var(--blue); font-weight: 900; }
+    a:hover { color: var(--hotpink); }
 
     .wrap {
       max-width: 980px;
       margin: 0 auto;
-      padding: 56px 20px 64px;
+      padding: 28px 18px 64px;
+    }
+
+    .marquee {
+      border: var(--border);
+      background: linear-gradient(90deg, var(--yellow), var(--cyan), var(--hotpink));
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee > div {
+      white-space: nowrap;
+      display: inline-block;
+      animation: scroll 16s linear infinite;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-shadow: 2px 2px 0 rgba(255,255,255,0.65);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-110%); }
     }
 
     .card {
-      background: var(--card);
-      border: 3px solid var(--ink);
+      background: rgba(255, 251, 230, 0.92);
+      border: var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 18px;
     }
 
     header {
       display: grid;
-      grid-template-columns: 96px 1fr;
+      grid-template-columns: 120px 1fr;
       gap: 16px;
       align-items: center;
-      padding-bottom: 18px;
-      border-bottom: 2px dashed rgba(11, 11, 18, 0.35);
-      margin-bottom: 18px;
+      padding: 10px;
+      border: 3px dashed rgba(0,0,0,0.35);
+      border-radius: 14px;
+      background:
+        radial-gradient(300px 220px at 10% 10%, rgba(255,0,168,0.28), transparent 60%),
+        radial-gradient(280px 220px at 85% 0%, rgba(0,229,255,0.35), transparent 60%),
+        radial-gradient(280px 240px at 75% 90%, rgba(182,255,0,0.28), transparent 60%),
+        rgba(255,255,255,0.55);
     }
 
-    @media (max-width: 640px) {
-      header { grid-template-columns: 72px 1fr; }
+    @media (max-width: 720px) {
+      header { grid-template-columns: 92px 1fr; }
     }
 
     .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 22px;
-      border: 3px solid var(--ink);
-      box-shadow: 10px 10px 0 rgba(11, 11, 18, 0.20);
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      border: 5px solid var(--ink);
       object-fit: cover;
-      background: var(--paper);
+      background: white;
+      box-shadow: 12px 12px 0 rgba(0,0,0,0.18);
     }
 
     h1 {
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.05;
       margin: 0;
-      letter-spacing: -0.03em;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
     }
 
-    .headline {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
-      font-weight: 600;
+    .rainbow {
+      background: linear-gradient(90deg, var(--hotpink), var(--orange), var(--yellow), var(--lime), var(--cyan), var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(2px 2px 0 rgba(255,255,255,0.7));
     }
 
-    .pills {
+    .subtitle {
+      margin: 8px 0 0;
+      font-weight: 900;
+      color: rgba(0,0,0,0.70);
+    }
+
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 10px;
     }
 
-    .pill {
-      border: 2px solid var(--ink);
-      background: var(--paper);
-      padding: 7px 10px;
+    .chip {
+      border: 3px solid var(--ink);
       border-radius: 999px;
+      padding: 6px 10px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.65), rgba(255,230,0,0.65));
       font-size: 13px;
-      color: rgba(11, 11, 18, 0.78);
-      white-space: nowrap;
-      box-shadow: 6px 6px 0 rgba(11, 11, 18, 0.12);
+      font-weight: 900;
+      box-shadow: 7px 7px 0 rgba(0,0,0,0.12);
     }
 
     .grid {
+      margin-top: 16px;
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 18px;
+      grid-template-columns: 1.22fr 0.78fr;
+      gap: 16px;
       align-items: start;
     }
 
@@ -123,177 +171,185 @@
     }
 
     h2 {
+      margin: 16px 0 8px;
       font-size: 18px;
-      margin: 22px 0 10px;
-      letter-spacing: -0.01em;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--lime);
+      display: inline-block;
+      padding: 6px 10px;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 7px 7px 0 rgba(0,0,0,0.10);
     }
 
-    p {
-      margin: 0 0 12px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
+    p { margin: 0 0 10px; line-height: 1.65; color: rgba(0,0,0,0.75); font-weight: 700; }
 
-    .list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
+    .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 
     .item {
-      border: 2px solid var(--ink);
-      background: var(--paper);
+      border: 3px solid var(--ink);
       border-radius: 14px;
-      padding: 12px 12px;
-      box-shadow: 8px 8px 0 rgba(11, 11, 18, 0.10);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.60);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.10);
     }
 
-    .item strong { color: var(--ink); }
-
-    .meta { color: rgba(11, 11, 18, 0.70); font-size: 13px; margin-top: 3px; }
-
-    .links {
-      display: grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
+    .item strong { font-weight: 900; }
+    .meta { margin-top: 4px; font-size: 13px; color: rgba(0,0,0,0.70); font-weight: 800; }
 
     .btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
       width: 100%;
-      padding: 12px 14px;
+      padding: 12px 12px;
+      border: 4px solid var(--ink);
       border-radius: 14px;
-      border: 2px solid var(--ink);
-      background: linear-gradient(135deg, rgba(255, 230, 0, 0.85), rgba(0, 229, 255, 0.55));
       text-decoration: none;
+      background: linear-gradient(135deg, var(--hotpink), var(--cyan), var(--yellow));
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.14);
       color: var(--ink);
-      box-shadow: 8px 8px 0 rgba(11, 11, 18, 0.12);
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .btn small { color: rgba(11, 11, 18, 0.75); font-weight: 700; }
+    .btn small { font-weight: 900; opacity: 0.75; }
 
-    .badge {
-      display: inline-block;
+    .sticker {
       margin-top: 10px;
-      padding: 8px 10px;
-      border: 2px dashed rgba(11, 11, 18, 0.45);
-      border-radius: 12px;
+      padding: 10px 12px;
+      border: 3px dashed rgba(0,0,0,0.45);
+      border-radius: 14px;
       background: rgba(255,255,255,0.55);
-      color: rgba(11,11,18,0.75);
-      font-size: 12px;
-      line-height: 1.4;
+      font-weight: 900;
+      color: rgba(0,0,0,0.70);
+    }
+
+    .counter {
+      margin-top: 14px;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.55);
+      font-weight: 900;
+    }
+
+    .counter code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(0,0,0,0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 2px solid rgba(0,0,0,0.12);
     }
 
     footer {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 2px dashed rgba(11, 11, 18, 0.35);
-      color: rgba(11, 11, 18, 0.65);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 3px dashed rgba(0,0,0,0.35);
+      color: rgba(0,0,0,0.65);
+      font-weight: 800;
       font-size: 12px;
     }
 
-    .accent {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .sparkle {
-      position: relative;
-    }
-
-    .sparkle:after {
-      content: "✦";
-      font-weight: 900;
-      margin-left: 8px;
-      color: #111827;
-      text-shadow: 2px 2px 0 rgba(255, 230, 0, 0.7);
-    }
+    .tiny { font-size: 12px; font-weight: 800; color: rgba(0,0,0,0.65); }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+    <div class="marquee" aria-label="Scrolling announcement">
+      <div>
+        WELCOME TO LAURIE’S EXTREMELY OFFICIAL INTERNET PAGE ✦ STRATEGY + STORYTELLING ✦ COMMUNITY IMPACT ✦ OCEAN INNOVATION ✦ DMs OPEN (BE NICE) ✦
+      </div>
+    </div>
+
     <section class="card">
       <header>
-        <img class="avatar" src="assets/laurie.jpg" alt="Portrait" loading="lazy" />
+        <img class="avatar" src="assets/laurie.jpg" alt="Photo" loading="lazy" />
         <div>
-          <h1 class="sparkle"><span class="accent">Laurie (Lo) Batten</span></h1>
-          <p class="headline">Community Builder • Marketing + Comms • Multimedia Storytelling • Startups + Innovation • Community Impact</p>
-          <div class="pills" aria-label="Quick tags">
-            <span class="pill">Nova Scotia, Canada</span>
-            <span class="pill">Strategy meets story</span>
-            <span class="pill">Clear messages, real momentum</span>
+          <h1><span class="rainbow">Laurie (Lo) Batten</span></h1>
+          <div class="subtitle">Community builder • Marketing + communications • Multimedia storytelling • Professional momentum generator</div>
+          <div class="chips" aria-label="Quick facts">
+            <span class="chip">Nova Scotia, Canada</span>
+            <span class="chip">Strategy 🤝 Story</span>
+            <span class="chip">Clear messages, real humans</span>
           </div>
+          <div class="tiny">Yes, this page is loud on purpose.</div>
         </div>
       </header>
 
       <div class="grid">
         <section>
-          <h2>About</h2>
-          <p>I build trust with words (and sometimes with colourful chaos). I’m a marketing + communications leader in Nova Scotia, with a journalism background and a soft spot for stories that actually <em>do</em> something in the real world.</p>
-          <p>These days I lead marketing and comms at <strong>Ocean Startup Project</strong>, helping shine a light on founders and programs pushing ocean innovation forward across Canada. I also founded <strong>Safer Steps Chebucto</strong> — a community-led push for safer, more walkable, better-connected coastal communities.</p>
-          <p>My sweet spot is where strategy meets storytelling: make the message make sense, make it human, and then build enough momentum that people go from “someone should…” to “here’s what we’re doing.” Also: if there’s a chance to run the Loop, I’m probably taking it.</p>
+          <h2>What I’m about</h2>
+          <p>I take big, messy ideas and turn them into clear, human, do-the-thing communications. I’m a marketing + comms leader with a journalism background, which means I’m allergic to fluff and very into outcomes.</p>
+          <p>In my day job, I lead marketing and communications at <strong>Ocean Startup Project</strong> — helping amplify founders and programs moving ocean innovation forward across Canada.</p>
+          <p>Outside of work, I founded <strong>Safer Steps Chebucto</strong>: a community-led effort pushing for safer, more walkable, more connected coastal communities. (Yes, I will happily talk about sidewalks.)</p>
+          <p>Bonus feature: if there’s time for a run around the Loop, I’m taking it.</p>
 
-          <h2>Experience</h2>
+          <h2>Experience (aka “Things I’ve done”) </h2>
           <ul class="list">
             <li class="item">
-              <strong>Director of Marketing and Communications</strong><div class="meta">Ocean Startup Project • Jan 2022 – Present</div>
+              <strong>Director of Marketing & Communications</strong>
+              <div class="meta">Ocean Startup Project • Jan 2022 – Present</div>
             </li>
             <li class="item">
-              <strong>Founder and Campaign Lead</strong><div class="meta">Safer Steps Chebucto • Nov 2025 – Present</div>
+              <strong>Founder & Campaign Lead</strong>
+              <div class="meta">Safer Steps Chebucto • Nov 2025 – Present</div>
             </li>
             <li class="item">
-              <strong>Marketing Manager and Senior Inclusion Advisor</strong><div class="meta">Volta • Feb 2019 – Jan 2022</div>
+              <strong>Marketing Manager + Senior Inclusion Advisor</strong>
+              <div class="meta">Volta • Feb 2019 – Jan 2022</div>
             </li>
             <li class="item">
-              <strong>Public Relations Coordinator</strong><div class="meta">Bide Awhile Animal Shelter Society • Aug 2017 – Feb 2019</div>
+              <strong>Public Relations Coordinator</strong>
+              <div class="meta">Bide Awhile Animal Shelter Society • Aug 2017 – Feb 2019</div>
             </li>
           </ul>
 
-          <h2>Education</h2>
+          <h2>Education (a.k.a. “The Lore”) </h2>
           <ul class="list">
             <li class="item">
-              <strong>The University of British Columbia</strong><div class="meta">Bachelor of Arts (B.A.), History & Political Sciences • 2008 – 2012</div>
+              <strong>University of British Columbia</strong>
+              <div class="meta">B.A. • History & Political Sciences • 2008 – 2012</div>
             </li>
             <li class="item">
-              <strong>Conestoga College</strong><div class="meta">Diploma, Journalism – Print • 2012 – 2014</div>
+              <strong>Conestoga College</strong>
+              <div class="meta">Diploma • Journalism (Print) • 2012 – 2014</div>
             </li>
           </ul>
         </section>
 
         <aside>
           <h2>Contact</h2>
-          <div class="links">
-            <a class="btn" href="https://www.linkedin.com/in/lauriebatten" target="_blank" rel="noreferrer">
-              <span>
-                <strong>LinkedIn</strong><br />
-                <small>DMs open (be nice)</small>
-              </span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="badge">No email on this page — slide into LinkedIn DMs like a professional.</div>
+          <a class="btn" href="https://www.linkedin.com/in/lauriebatten" target="_blank" rel="noreferrer">
+            <span>
+              LinkedIn<br />
+              <small>DM me on LinkedIn</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <div class="sticker">No email on this page. Slide into LinkedIn DMs like a professional. If you’re selling crypto, I will simply become unavailable.</div>
 
           <h2>Volunteering</h2>
           <ul class="list">
             <li class="item">
-              <strong>Director of Marketing and Communications</strong><div class="meta">Fusion Halifax • Mar 2020 – Dec 2020</div>
+              <strong>Director of Marketing & Communications</strong>
+              <div class="meta">Fusion Halifax • Mar 2020 – Dec 2020</div>
             </li>
             <li class="item">
-              <strong>Advisory Committee Member – WAGE Ambassador Program</strong><div class="meta">ICTC • Aug 2021 – Feb 2024</div>
+              <strong>Advisory Committee Member — WAGE Ambassador Program</strong>
+              <div class="meta">ICTC • Aug 2021 – Feb 2024</div>
             </li>
           </ul>
 
+          <div class="counter">
+            Visitor counter (for authenticity): <code>000760</code>
+            <div class="tiny">(It’s a tribute to the vibe, not a database.)</div>
+          </div>
+
           <footer>
-            <div>Built with GitHub Pages.</div>
+            Built with GitHub Pages. Best viewed while listening to dial‑up noises.
           </footer>
         </aside>
       </div>
