@@ -4,17 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laurie (Lo) Batten</title>
-  <meta name="description" content="Community Builder • Marketing + Communications • Multimedia Storytelling" />
+  <meta name="description" content="Community builder, marketing + comms lead, and enthusiastic teller of stories (with a dash of camp)." />
   <style>
     :root {
-      --bg: #0b1220;
-      --card: rgba(255,255,255,0.06);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --line: rgba(255,255,255,0.12);
-      --accent: #7dd3fc;
-      --accent2: #a78bfa;
-      --shadow: 0 12px 40px rgba(0,0,0,0.35);
+      /* campy + retro on purpose */
+      --bg1: #ff00a8;
+      --bg2: #00e5ff;
+      --bg3: #ffe600;
+      --ink: #0b0b12;
+      --paper: #fffdf2;
+      --card: rgba(255, 253, 242, 0.88);
+      --line: rgba(11, 11, 18, 0.18);
+      --muted: rgba(11, 11, 18, 0.72);
+      --shadow: 0 18px 0 rgba(11, 11, 18, 0.18);
+      --radius: 18px;
+      --accent: #7c3aed;
+      --accent2: #ff006e;
     }
 
     * { box-sizing: border-box; }
@@ -23,79 +28,97 @@
     body {
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
+      color: var(--ink);
       background:
-        radial-gradient(1200px 800px at 20% 10%, rgba(125, 211, 252, 0.25), transparent 60%),
-        radial-gradient(1200px 800px at 80% 0%, rgba(167, 139, 250, 0.22), transparent 55%),
-        radial-gradient(1200px 800px at 80% 85%, rgba(34, 211, 238, 0.16), transparent 60%),
-        var(--bg);
+        radial-gradient(900px 700px at 15% 10%, rgba(255, 230, 0, 0.70), transparent 55%),
+        radial-gradient(900px 700px at 85% 15%, rgba(0, 229, 255, 0.75), transparent 55%),
+        radial-gradient(900px 700px at 70% 85%, rgba(255, 0, 168, 0.70), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      background-attachment: fixed;
     }
 
     a { color: inherit; }
-    a:hover { color: white; }
+    a:hover { color: var(--accent); }
 
     .wrap {
-      max-width: 920px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 56px 20px 64px;
     }
 
     .card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
+      border: 3px solid var(--ink);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 28px;
     }
 
     header {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+      grid-template-columns: 96px 1fr;
+      gap: 16px;
+      align-items: center;
       padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 2px dashed rgba(11, 11, 18, 0.35);
       margin-bottom: 18px;
     }
 
+    @media (max-width: 640px) {
+      header { grid-template-columns: 72px 1fr; }
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 3px solid var(--ink);
+      box-shadow: 10px 10px 0 rgba(11, 11, 18, 0.20);
+      object-fit: cover;
+      background: var(--paper);
+    }
+
     h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.1;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.05;
       margin: 0;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
     }
 
     .headline {
-      margin: 0;
+      margin: 6px 0 0;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.5;
+      line-height: 1.55;
+      font-weight: 600;
     }
 
     .pills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 6px;
+      margin-top: 10px;
     }
 
     .pill {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      padding: 8px 10px;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      padding: 7px 10px;
       border-radius: 999px;
       font-size: 13px;
-      color: var(--muted);
+      color: rgba(11, 11, 18, 0.78);
       white-space: nowrap;
+      box-shadow: 6px 6px 0 rgba(11, 11, 18, 0.12);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 18px;
       align-items: start;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .grid { grid-template-columns: 1fr; }
     }
 
@@ -103,6 +126,7 @@
       font-size: 18px;
       margin: 22px 0 10px;
       letter-spacing: -0.01em;
+      text-transform: uppercase;
     }
 
     p {
@@ -120,15 +144,16 @@
     }
 
     .item {
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,0.10);
+      border: 2px solid var(--ink);
+      background: var(--paper);
       border-radius: 14px;
       padding: 12px 12px;
+      box-shadow: 8px 8px 0 rgba(11, 11, 18, 0.10);
     }
 
-    .item strong { color: var(--text); }
+    .item strong { color: var(--ink); }
 
-    .meta { color: var(--muted); font-size: 13px; margin-top: 3px; }
+    .meta { color: rgba(11, 11, 18, 0.70); font-size: 13px; margin-top: 3px; }
 
     .links {
       display: grid;
@@ -144,19 +169,33 @@
       width: 100%;
       padding: 12px 14px;
       border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--ink);
+      background: linear-gradient(135deg, rgba(255, 230, 0, 0.85), rgba(0, 229, 255, 0.55));
       text-decoration: none;
-      color: var(--text);
+      color: var(--ink);
+      box-shadow: 8px 8px 0 rgba(11, 11, 18, 0.12);
+      font-weight: 800;
     }
 
-    .btn small { color: var(--muted); }
+    .btn small { color: rgba(11, 11, 18, 0.75); font-weight: 700; }
+
+    .badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 10px;
+      border: 2px dashed rgba(11, 11, 18, 0.45);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.55);
+      color: rgba(11,11,18,0.75);
+      font-size: 12px;
+      line-height: 1.4;
+    }
 
     footer {
       margin-top: 18px;
       padding-top: 14px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      border-top: 2px dashed rgba(11, 11, 18, 0.35);
+      color: rgba(11, 11, 18, 0.65);
       font-size: 12px;
     }
 
@@ -166,19 +205,32 @@
       background-clip: text;
       color: transparent;
     }
+
+    .sparkle {
+      position: relative;
+    }
+
+    .sparkle:after {
+      content: "✦";
+      font-weight: 900;
+      margin-left: 8px;
+      color: #111827;
+      text-shadow: 2px 2px 0 rgba(255, 230, 0, 0.7);
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
       <header>
+        <img class="avatar" src="assets/laurie.jpg" alt="Portrait" loading="lazy" />
         <div>
-          <h1><span class="accent">Laurie (Lo) Batten</span></h1>
-          <p class="headline">Community Builder | Marketing + Communications | Multimedia Storytelling | Startups, Innovation, Community Impact</p>
+          <h1 class="sparkle"><span class="accent">Laurie (Lo) Batten</span></h1>
+          <p class="headline">Community Builder • Marketing + Comms • Multimedia Storytelling • Startups + Innovation • Community Impact</p>
           <div class="pills" aria-label="Quick tags">
             <span class="pill">Nova Scotia, Canada</span>
-            <span class="pill">Marketing & Communications</span>
-            <span class="pill">Storytelling + Strategy</span>
+            <span class="pill">Strategy meets story</span>
+            <span class="pill">Clear messages, real momentum</span>
           </div>
         </div>
       </header>
@@ -186,9 +238,9 @@
       <div class="grid">
         <section>
           <h2>About</h2>
-          <p>I’m a marketing and communications leader based in Nova Scotia — and a former journalist who’s always been drawn to strong stories and real-world impact. I love taking big ideas and making them feel clear, human, and actionable — the kind of communications that builds trust and moves people.</p>
-          <p>In my professional role, I lead marketing and communications with the Ocean Startup Project, where I help amplify founders and programs advancing ocean innovation across Canada. Outside of work, I’m the founder of Safer Steps Chebucto, a grassroots initiative advocating for safer, more walkable and connected coastal communities.</p>
-          <p>I’m at my best when strategy meets story: shaping a message, building momentum, and turning “we should do something about this” into “here’s what we’re doing — and how you can be part of it.” You’ll also find me out running the Loop whenever I can.</p>
+          <p>I build trust with words (and sometimes with colourful chaos). I’m a marketing + communications leader in Nova Scotia, with a journalism background and a soft spot for stories that actually <em>do</em> something in the real world.</p>
+          <p>These days I lead marketing and comms at <strong>Ocean Startup Project</strong>, helping shine a light on founders and programs pushing ocean innovation forward across Canada. I also founded <strong>Safer Steps Chebucto</strong> — a community-led push for safer, more walkable, better-connected coastal communities.</p>
+          <p>My sweet spot is where strategy meets storytelling: make the message make sense, make it human, and then build enough momentum that people go from “someone should…” to “here’s what we’re doing.” Also: if there’s a chance to run the Loop, I’m probably taking it.</p>
 
           <h2>Experience</h2>
           <ul class="list">
@@ -223,11 +275,12 @@
             <a class="btn" href="https://www.linkedin.com/in/lauriebatten" target="_blank" rel="noreferrer">
               <span>
                 <strong>LinkedIn</strong><br />
-                <small>DM me on LinkedIn</small>
+                <small>DMs open (be nice)</small>
               </span>
               <span aria-hidden="true">→</span>
             </a>
           </div>
+          <div class="badge">No email on this page — slide into LinkedIn DMs like a professional.</div>
 
           <h2>Volunteering</h2>
           <ul class="list">
